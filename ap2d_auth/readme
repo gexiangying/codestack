@@ -1,0 +1,2 @@
+copy ap2d.h ap2d.c to source then compile and use login()
+copu others(except ap2d.lua) to bin/ folder 
