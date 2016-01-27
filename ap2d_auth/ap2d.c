@@ -64,12 +64,12 @@ int login()
 		32, 99,104,117,110,107, 32, 61, 61, 32,114,115, 32,116,104,101,110, 10,  9,108,
 		111,103,105,110,101,100, 32, 61, 32,116,114,117,101, 10,101,110,100, 10,
 	};
-
-	if (luaL_loadbuffer(L,(const char*)B1,sizeof(B1),"ap2d.lua")==0) lua_call(L, 0, 0);
-
-	lua_getglobal(L,"logined");
-	result = lua_toboolean(L,-1);
-	lua_pop(L,1);
+	if ((luaL_loadbuffer(L,(const char*)B1,sizeof(B1),"ap2d.lua")==0) && (lua_pcall(L, 0, 0,0)==0)){
+		lua_getglobal(L,"logined");
+		result = lua_toboolean(L,-1);
+		lua_pop(L,1);
+	}
 	lua_close(L);
+
 	return result;
 }
