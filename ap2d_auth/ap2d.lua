@@ -7,20 +7,19 @@ local id,macs
 if fh then
 	id = fh:read("*a")
 	fh:close()
-else
-	local luaext_pipe = require "luaext.pipe"
-	local pipe = luaext_pipe.new("ipconfig /all")
-	macs = {}
-	repeat
-		local line = pipe:getline()
-		if line then
-			local mac = string.match(line,"%s+(%x%x%-%x%x%-%x%x%-%x%x%-%x%x%-%x%x)%s+")
-			if mac then macs[mac] = true end
-		end
-	until not line
-	pipe:closeout()
-	pipe:closein()
 end
+local luaext_pipe = require "luaext.pipe"
+local pipe = luaext_pipe.new("ipconfig /all")
+macs = {}
+repeat
+	local line = pipe:getline()
+	if line then
+		local mac = string.match(line,"%s+(%x%x%-%x%x%-%x%x%-%x%x%-%x%x%-%x%x)%s+")
+		if mac then macs[mac] = true end
+	end
+until not line
+pipe:closeout()
+pipe:closein()
 
 local loginstr
 if id then 
