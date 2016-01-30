@@ -2,8 +2,8 @@ local zip = require "luazip"
 assert(zip)
 local test_file_source = "test_file_source.zip"
 function test()
+	os.remove(test_file_source)
 	local ar = assert(zip.open(test_file_source, zip.CREATE));
-
 	ar:add("file.txt","file","file.txt")
 	ar:close()
 end

@@ -1,6 +1,6 @@
 CC = $(BIN)gcc 
 PRJ = luazip
-CFLAGS = 
+CFLAGS = -DPIC
 C_PROC =
 INCPATH = -I/usr/local/include
 LIBPATH = -L/usr/local/lib
