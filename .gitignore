@@ -5,4 +5,5 @@
 *.zip
 *.exe
 *.gz
+*.dep
 tags

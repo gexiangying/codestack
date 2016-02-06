@@ -2,14 +2,15 @@ CC=gcc
 PRJ=lproc
 INCPATH = -I/usr/local/include
 LIBPATH = -L/usr/local/lib
-LIBS = -llua
+LIBS = -llua -lpthread
+LDFLAGS = -static
 DEPS = $(PRJ).dep
 SRCS := $(wildcard *.c)
 HPPS := $(wildcard *.h)
 OBJS := $(patsubst %.c,%.o,$(SRCS))
 all: $(PRJ) $(DEPS)
 $(PRJ):$(OBJS)
-	$(CC) -o $@ $(OBJS) $(LIBPATH) $(LIBS)
+	$(CC) -o $@ $(OBJS) $(LIBPATH) $(LIBS) $(LDFLAGS)
 %.o:%.c
 	$(CC) $(INCPATH) -c $<
 $(DEPS):$(SRCS) $(HPPS)
