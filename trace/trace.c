@@ -24,7 +24,7 @@ int TraceOut(char* format,...)
 	if(msg != NULL){
 		_vsnprintf(msg,size + 1,format,argList);
 		va_end(argList);
-		WriteFile(hStdOut,msg,size + 1,&count,NULL);
+		WriteFile(hStdOut,msg,size,&count,NULL);
 		free(msg);
 	}
 	return count;
