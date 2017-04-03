@@ -1,3 +1,4 @@
+package.cpath = package.path .. ";../?.dll"
 require("luacom")
  
 local ADO = {}

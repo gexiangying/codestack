@@ -1,3 +1,4 @@
+package.cpath = package.cpath .. ";../?.dll"
 require "luacom"
 local fso = luacom.CreateObject("Scripting.FileSystemObject")
 local myFoler = fso:GetFolder("C:\\")

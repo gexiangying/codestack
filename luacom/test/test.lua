@@ -1,3 +1,4 @@
+package.cpath = package.path .. ";/usr/local/bin/?.dll"
 require "ado"
 
 local db_string = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=test.mdb"

@@ -1,11 +1,12 @@
+package.cpath = package.cpath .. ";../?.dll;?.dll"
 require "luacom"  
-  
+local luaext  = require "luaext"  
 wordApp = luacom.CreateObject("Word.Application")  
 wordApp.Visible = true  
   
 wordDoc = wordApp.Documents:Add()  
-wordApp.Selection:TypeText("ä¸­æ–‡çœŸçš„å¯ä»¥å—ï¼Œæˆ‘ä¹Ÿä¸çŸ¥é“å•Šï¼")  
-wordDoc:SaveAs2("C:\\gexy\\ä¸­æ–‡çš„æ–‡ä»¶åå“¦è¿˜æŒºé•¿çš„.docx")  
+wordApp.Selection:TypeText(luaext.a2u8("ÖĞÎÄÕæµÄ¿ÉÒÔÂğ£¬ÎÒÒ²²»ÖªµÀ°¡£¡"))  
+wordDoc:SaveAs2(luaext.a2u8("C:\\gexy\\ÖĞÎÄµÄÎÄ¼şÃûÅ¶»¹Í¦³¤µÄ.docx"))  
   
 wordDoc:Close(0)  
 wordApp:Quit(0)  
