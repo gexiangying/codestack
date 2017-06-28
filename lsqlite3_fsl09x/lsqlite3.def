@@ -1,0 +1,3 @@
+LIBRARY lsqlite3
+EXPORTS
+luaopen_lsqlite3 @1
