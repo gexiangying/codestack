@@ -68,3 +68,8 @@ kpub = assert(crypto.pkey.read('pub.pem'))
 kpriv = assert(crypto.pkey.read('priv.pem', true))
 
 test_verify(kpub, kpriv)
+
+kpub = assert(crypto.pkey.read('id_rsa_pub.pem'))
+kpriv = assert(crypto.pkey.read('id_rsa.pem', true))
+
+test_verify(kpub, kpriv)
