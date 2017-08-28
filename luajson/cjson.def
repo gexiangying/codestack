@@ -1,0 +1,4 @@
+LIBRARY cjson
+EXPORTS
+luaopen_cjson @1
+luaopen_cjson_safe @2

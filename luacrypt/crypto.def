@@ -1,3 +1,3 @@
-LIBRARY luaext
+LIBRARY crypto
 EXPORTS 
 luaopen_crypto @1
